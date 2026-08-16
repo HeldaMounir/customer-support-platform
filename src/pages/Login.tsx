@@ -6,23 +6,95 @@ import {
   Mail,
   Sparkles,
 } from "lucide-react";
+
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+import { useAuth } from "../context/AuthContext";
+
+const loginSchema = z.object({
+  email: z
+    .string()
+    .min(1, "Email is required")
+    .email("Please enter a valid email address"),
+
+  password: z
+    .string()
+    .min(1, "Password is required")
+    .min(6, "Password must be at least 6 characters"),
+});
+
+type LoginFormData = z.infer<typeof loginSchema>;
 
 export default function Login() {
-  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+
+  const { login } = useAuth();
+
+  const [showPassword, setShowPassword] =
+    useState(false);
+
+  const [serverError, setServerError] =
+    useState("");
+
+  const {
+    register,
+    handleSubmit,
+    formState: {
+      errors,
+      isSubmitting,
+    },
+  } = useForm<LoginFormData>({
+    resolver: zodResolver(loginSchema),
+
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
+  const onSubmit = async (
+    data: LoginFormData
+  ) => {
+    setServerError("");
+
+    try {
+      await login(
+        data.email,
+        data.password
+      );
+
+      navigate("/dashboard", {
+        replace: true,
+      });
+    } catch (error) {
+      setServerError(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
+    }
+  };
 
   return (
     <div className="login-page">
 
       <div className="login-background login-bg-one" />
+
       <div className="login-background login-bg-two" />
 
       <div className="login-container">
 
         {/* Left Side */}
+
         <section className="login-showcase">
 
           <div className="login-brand">
+
             <div className="brand-mark">
               <Sparkles size={20} />
             </div>
@@ -31,6 +103,7 @@ export default function Login() {
               <strong>Supportly</strong>
               <span>Customer Care</span>
             </div>
+
           </div>
 
           <div className="showcase-content">
@@ -47,9 +120,9 @@ export default function Login() {
             </h1>
 
             <p>
-              Manage your requests, communicate with our
-              support team, and stay updated every step of
-              the way.
+              Manage your requests, communicate with
+              our support team, and stay updated every
+              step of the way.
             </p>
 
             <div className="showcase-features">
@@ -60,7 +133,10 @@ export default function Login() {
                 </div>
 
                 <div>
-                  <strong>Track everything</strong>
+                  <strong>
+                    Track everything
+                  </strong>
+
                   <span>
                     Follow your requests in real time.
                   </span>
@@ -73,7 +149,10 @@ export default function Login() {
                 </div>
 
                 <div>
-                  <strong>Stay connected</strong>
+                  <strong>
+                    Stay connected
+                  </strong>
+
                   <span>
                     Keep conversations in one place.
                   </span>
@@ -86,7 +165,10 @@ export default function Login() {
                 </div>
 
                 <div>
-                  <strong>Get things resolved</strong>
+                  <strong>
+                    Get things resolved
+                  </strong>
+
                   <span>
                     Know exactly where your request stands.
                   </span>
@@ -104,16 +186,19 @@ export default function Login() {
         </section>
 
         {/* Right Side */}
+
         <section className="login-form-section">
 
           <div className="login-form-wrapper">
 
             <div className="mobile-login-brand">
+
               <div className="brand-mark">
                 <Sparkles size={18} />
               </div>
 
               <strong>Supportly</strong>
+
             </div>
 
             <div className="login-heading">
@@ -127,13 +212,19 @@ export default function Login() {
               </h2>
 
               <p>
-                Enter your details to access your customer
-                workspace.
+                Enter your details to access your
+                customer workspace.
               </p>
 
             </div>
 
-            <form className="login-form">
+            <form
+              className="login-form"
+              onSubmit={handleSubmit(onSubmit)}
+              noValidate
+            >
+
+              {/* Email */}
 
               <div className="form-group">
 
@@ -141,7 +232,13 @@ export default function Login() {
                   Email address
                 </label>
 
-                <div className="input-wrapper">
+                <div
+                  className={`input-wrapper ${
+                    errors.email
+                      ? "input-error"
+                      : ""
+                  }`}
+                >
 
                   <Mail size={18} />
 
@@ -149,15 +246,25 @@ export default function Login() {
                     id="email"
                     type="email"
                     placeholder="you@example.com"
+                    {...register("email")}
                   />
 
                 </div>
 
+                {errors.email && (
+                  <span className="field-error">
+                    {errors.email.message}
+                  </span>
+                )}
+
               </div>
+
+              {/* Password */}
 
               <div className="form-group">
 
                 <div className="label-row">
+
                   <label htmlFor="password">
                     Password
                   </label>
@@ -168,9 +275,16 @@ export default function Login() {
                   >
                     Forgot password?
                   </button>
+
                 </div>
 
-                <div className="input-wrapper">
+                <div
+                  className={`input-wrapper ${
+                    errors.password
+                      ? "input-error"
+                      : ""
+                  }`}
+                >
 
                   <LockKeyhole size={18} />
 
@@ -182,13 +296,16 @@ export default function Login() {
                         : "password"
                     }
                     placeholder="Enter your password"
+                    {...register("password")}
                   />
 
                   <button
                     type="button"
                     className="password-toggle"
                     onClick={() =>
-                      setShowPassword(!showPassword)
+                      setShowPassword(
+                        !showPassword
+                      )
                     }
                   >
                     {showPassword ? (
@@ -200,7 +317,15 @@ export default function Login() {
 
                 </div>
 
+                {errors.password && (
+                  <span className="field-error">
+                    {errors.password.message}
+                  </span>
+                )}
+
               </div>
+
+              {/* Remember me */}
 
               <label className="remember-me">
 
@@ -212,13 +337,30 @@ export default function Login() {
 
               </label>
 
+              {/* Server Error */}
+
+              {serverError && (
+                <div className="login-error">
+                  {serverError}
+                </div>
+              )}
+
+              {/* Submit */}
+
               <button
                 type="submit"
                 className="login-button"
+                disabled={isSubmitting}
               >
-                <span>Sign in</span>
+
+                <span>
+                  {isSubmitting
+                    ? "Signing in..."
+                    : "Sign in"}
+                </span>
 
                 <ArrowRight size={18} />
+
               </button>
 
             </form>
@@ -232,8 +374,8 @@ export default function Login() {
             </button>
 
             <p className="login-note">
-              By continuing, you agree to our Terms and
-              Privacy Policy.
+              By continuing, you agree to our Terms
+              and Privacy Policy.
             </p>
 
           </div>
@@ -241,6 +383,7 @@ export default function Login() {
         </section>
 
       </div>
+
     </div>
   );
 }

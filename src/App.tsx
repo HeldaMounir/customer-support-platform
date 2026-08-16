@@ -1,34 +1,47 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+} from "react-router-dom";
 
 import AppLayout from "./components/layout/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
 function App() {
   return (
     <Routes>
+
+      {/* Public Routes */}
 
       <Route
         path="/login"
         element={<Login />}
       />
 
-      <Route element={<AppLayout />}>
+      {/* Protected Routes */}
 
-        <Route
-          path="/"
-          element={
-            <Navigate
-              to="/dashboard"
-              replace
-            />
-          }
-        />
+      <Route element={<ProtectedRoute />}>
 
-        <Route
-          path="/dashboard"
-          element={<Dashboard />}
-        />
+        <Route element={<AppLayout />}>
+
+          <Route
+            path="/"
+            element={
+              <Navigate
+                to="/dashboard"
+                replace
+              />
+            }
+          />
+
+          <Route
+            path="/dashboard"
+            element={<Dashboard />}
+          />
+
+        </Route>
 
       </Route>
 

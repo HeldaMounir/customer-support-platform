@@ -2108,3 +2108,24 @@ button {
     font-size: 25px;
   }
 }
+.field-error {
+  margin-top: 2px;
+
+  color: #d95668;
+
+  font-size: 9px;
+
+  line-height: 1.4;
+}
+
+.input-error {
+  border-color: #e57383 !important;
+
+  background: #fffafa;
+}
+
+.input-error:focus-within {
+  box-shadow:
+    0 0 0 4px
+    rgba(229, 115, 131, 0.08);
+}

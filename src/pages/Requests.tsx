@@ -104,10 +104,14 @@ const navigate = useNavigate();
           </p>
         </div>
 
-        <button className="primary-action">
-          <Plus size={17} />
-          New request
-        </button>
+       <button
+  type="button"
+  className="primary-action"
+  onClick={() => navigate("/requests/new")}
+>
+  <Plus size={17} />
+  New request
+</button>
 
       </div>
 

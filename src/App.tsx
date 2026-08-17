@@ -9,7 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import Requests from "./pages/Requests";
-
+import CreateRequest from "./pages/CreateRequest";
 function App() {
   return (
     <Routes>
@@ -33,6 +33,10 @@ function App() {
 <Route
   path="/requests/:id"
   element={<RequestDetails />}
+/>
+<Route
+  path="/requests/new"
+  element={<CreateRequest />}
 />
 
           <Route

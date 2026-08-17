@@ -20,7 +20,11 @@ export type SupportRequest = {
   createdAt: string;
   updatedAt: string;
 };
-
+export const addRequest = (
+  request: SupportRequest
+) => {
+  requests.unshift(request);
+};
 export const requests: SupportRequest[] = [
   {
     id: "REQ-1048",

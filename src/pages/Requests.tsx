@@ -10,6 +10,7 @@ import { useMemo, useState } from "react";
 
 import RequestCard from "../components/requests/RequestCard";
 import { requests } from "../data/requests";
+import { useNavigate } from "react-router-dom";
 
 type StatusFilter =
   | "all"
@@ -27,7 +28,7 @@ type PriorityFilter =
 
 export default function Requests() {
   const [search, setSearch] = useState("");
-
+const navigate = useNavigate();
   const [status, setStatus] =
     useState<StatusFilter>("all");
 
@@ -283,10 +284,13 @@ export default function Requests() {
         <div className="requests-list">
 
           {filteredRequests.map((request) => (
-            <RequestCard
-              key={request.id}
-              request={request}
-            />
+           <RequestCard
+  key={request.id}
+  request={request}
+  onClick={() =>
+    navigate(`/requests/${request.id}`)
+  }
+/>
           ))}
 
         </div>

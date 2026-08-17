@@ -3,7 +3,7 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-
+import RequestDetails from "./pages/RequestDetails";
 import AppLayout from "./components/layout/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
@@ -29,6 +29,10 @@ function App() {
         <Route
   path="/requests"
   element={<Requests />}
+/>
+<Route
+  path="/requests/:id"
+  element={<RequestDetails />}
 />
 
           <Route

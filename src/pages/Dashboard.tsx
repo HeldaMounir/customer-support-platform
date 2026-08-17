@@ -2,232 +2,194 @@ import {
   ArrowUpRight,
   CheckCircle2,
   Clock3,
-  MessageCircle,
+  FileText,
   Plus,
-  Sparkles,
+  RefreshCw,
   Ticket,
-  TrendingUp,
 } from "lucide-react";
+import { requests } from "../data/requests";
 
-const requests = [
-  {
-    id: "#REQ-1042",
-    title: "Unable to access my account",
-    category: "Account",
-    status: "In Progress",
-    priority: "High",
-    date: "Today",
-  },
-  {
-    id: "#REQ-1038",
-    title: "Payment confirmation issue",
-    category: "Billing",
-    status: "Waiting",
-    priority: "Medium",
-    date: "Yesterday",
-  },
-  {
-    id: "#REQ-1029",
-    title: "Update account information",
-    category: "Profile",
-    status: "Resolved",
-    priority: "Low",
-    date: "Aug 12",
-  },
-];
+import StatCard from "../components/dashboard/StatCard";
+import { useAuth } from "../context/AuthContext";
 
 export default function Dashboard() {
+  const { user } = useAuth();
+  const openRequests = requests.filter(
+  (request) => request.status === "open"
+).length;
+
+const inProgressRequests = requests.filter(
+  (request) => request.status === "in-progress"
+).length;
+
+const resolvedRequests = requests.filter(
+  (request) => request.status === "resolved"
+).length;
+
+const totalRequests = requests.length;
+
   return (
     <div className="dashboard-page">
 
-      {/* Decorative Background */}
-      <div className="background-blur blur-one" />
-      <div className="background-blur blur-two" />
+      {/* Header */}
 
-      {/* Hero */}
-      <section className="hero-section">
+      <div className="dashboard-header">
 
-        <div className="hero-content">
-          <div className="welcome-badge">
-            <Sparkles size={14} />
-            Customer workspace
-          </div>
+        <div>
+          <span className="dashboard-eyebrow">
+            CUSTOMER PORTAL
+          </span>
 
           <h1>
-            Hey Helda,
-            <br />
-            <span>how can we help?</span>
+            Good morning, {user?.name?.split(" ")[0]} 👋
           </h1>
 
           <p>
-            Everything you need to manage your support requests,
-            communicate with our team, and stay updated.
+            Here's what's happening with your support
+            requests.
           </p>
-
-          <button className="hero-button">
-            <Plus size={18} />
-            Create a request
-          </button>
         </div>
 
-        <div className="hero-visual">
-          <div className="floating-card card-one">
-            <CheckCircle2 size={20} />
-            <div>
-              <strong>12</strong>
-              <span>Resolved</span>
-            </div>
-          </div>
+        <button className="primary-action">
+          <Plus size={17} />
+          New request
+        </button>
 
-          <div className="floating-card card-two">
-            <MessageCircle size={20} />
-            <div>
-              <strong>24/7</strong>
-              <span>Support</span>
-            </div>
-          </div>
-
-          <div className="hero-circle">
-            <Ticket size={55} />
-          </div>
-        </div>
-
-      </section>
+      </div>
 
       {/* Stats */}
-      <section className="stats-grid">
 
-        <div className="modern-stat-card">
-          <div className="stat-icon purple">
-            <Ticket size={21} />
-          </div>
+      <div className="stats-grid">
 
-          <div className="stat-content">
-            <span>Open requests</span>
-            <strong>04</strong>
-          </div>
+        <StatCard
+          title="Open Requests"
+          value={openRequests}
+          description="Currently waiting for support"
+          icon={Ticket}
+         
+        />
 
-          <div className="stat-trend positive">
-            <TrendingUp size={14} />
-            12%
-          </div>
-        </div>
+        <StatCard
+          title="In Progress"
+          value={inProgressRequests}
+          description="Being handled by our team"
+          icon={Clock3}
+        />
 
-        <div className="modern-stat-card">
-          <div className="stat-icon orange">
-            <Clock3 size={21} />
-          </div>
+        <StatCard
+          title="Resolved"
+         value={resolvedRequests}
+          description="Successfully resolved"
+          icon={CheckCircle2}
+          
+        />
 
-          <div className="stat-content">
-            <span>In progress</span>
-            <strong>02</strong>
-          </div>
+        <StatCard
+          title="Total Requests"
+          value={totalRequests}
+          description="All your support requests"
+          icon={FileText}
+        />
 
-          <div className="stat-label">
-            Active
-          </div>
-        </div>
+      </div>
 
-        <div className="modern-stat-card">
-          <div className="stat-icon green">
-            <CheckCircle2 size={21} />
-          </div>
+      {/* Content */}
 
-          <div className="stat-content">
-            <span>Resolved</span>
-            <strong>12</strong>
-          </div>
+      <div className="dashboard-content-grid">
 
-          <div className="stat-trend positive">
-            <TrendingUp size={14} />
-            24%
-          </div>
-        </div>
+        {/* Recent Requests */}
 
-      </section>
+        <section className="dashboard-section">
 
-      {/* Requests */}
-      <section className="requests-section">
+          <div className="section-header">
 
-        <div className="section-heading">
-          <div>
-            <span className="section-label">
-              YOUR ACTIVITY
-            </span>
+            <div>
+              <h2>Recent requests</h2>
 
-            <h2>Recent requests</h2>
-
-            <p>
-              Keep track of your latest conversations.
-            </p>
-          </div>
-
-          <button className="view-all">
-            View all
-            <ArrowUpRight size={16} />
-          </button>
-        </div>
-
-        <div className="requests-list">
-
-          {requests.map((request) => (
-            <div
-              className="request-card"
-              key={request.id}
-            >
-              <div className="request-main">
-
-                <div className="request-icon">
-                  <Ticket size={19} />
-                </div>
-
-                <div className="request-info">
-                  <span className="request-id">
-                    {request.id}
-                  </span>
-
-                  <h3>
-                    {request.title}
-                  </h3>
-
-                  <div className="request-meta">
-                    <span>{request.category}</span>
-                    <span className="dot">•</span>
-                    <span>{request.date}</span>
-                  </div>
-                </div>
-
-              </div>
-
-              <div className="request-right">
-
-                <span
-                  className={`priority ${request.priority.toLowerCase()}`}
-                >
-                  {request.priority}
-                </span>
-
-                <span
-                  className={`status ${request.status
-                    .toLowerCase()
-                    .replace(" ", "-")}`}
-                >
-                  <span className="status-dot" />
-                  {request.status}
-                </span>
-
-                <ArrowUpRight
-                  className="request-arrow"
-                  size={19}
-                />
-
-              </div>
+              <p>
+                Your latest support activity
+              </p>
             </div>
-          ))}
 
-        </div>
+            <button className="text-action">
+              View all
+              <ArrowUpRight size={14} />
+            </button>
 
-      </section>
+          </div>
+<div className="requests-preview">
+
+  {requests.slice(0, 3).map((request) => (
+
+    <div
+      className="request-preview-card"
+      key={request.id}
+    >
+
+      <div className="request-icon">
+        <RefreshCw size={16} />
+      </div>
+
+      <div className="request-info">
+
+        <strong>
+          {request.title}
+        </strong>
+
+        <span>
+          #{request.id} · Updated{" "}
+          {new Date(
+            request.updatedAt
+          ).toLocaleDateString()}
+        </span>
+
+      </div>
+
+      <span
+        className={`status-badge status-${request.status}`}
+      >
+        {request.status === "in-progress"
+          ? "In Progress"
+          : request.status.charAt(0).toUpperCase() +
+            request.status.slice(1)}
+      </span>
+
+    </div>
+
+  ))}
+
+</div>
+          
+
+          
+
+        </section>
+
+        {/* Quick Action */}
+
+        <section className="quick-action-card">
+
+          <div className="quick-action-icon">
+            <Ticket size={20} />
+          </div>
+
+          <h2>
+            Need help?
+          </h2>
+
+          <p>
+            Create a new support request and our
+            team will get back to you.
+          </p>
+
+          <button className="quick-action-button">
+            Create request
+            <ArrowUpRight size={15} />
+          </button>
+
+        </section>
+
+      </div>
 
     </div>
   );

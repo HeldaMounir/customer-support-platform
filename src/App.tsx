@@ -8,6 +8,7 @@ import AppLayout from "./components/layout/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 import ProtectedRoute from "./routes/ProtectedRoute";
+import Requests from "./pages/Requests";
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
       <Route element={<ProtectedRoute />}>
 
         <Route element={<AppLayout />}>
+        <Route
+  path="/requests"
+  element={<Requests />}
+/>
 
           <Route
             path="/"

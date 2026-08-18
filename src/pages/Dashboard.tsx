@@ -93,11 +93,11 @@ const totalRequests = requests.length;
 
       </div>
 
-      {/* Content */}
+    
 
       <div className="dashboard-content-grid">
 
-        {/* Recent Requests */}
+      
 
         <section className="dashboard-section">
 
@@ -165,7 +165,7 @@ const totalRequests = requests.length;
 
         </section>
 
-        {/* Quick Action */}
+      
 
         <section className="quick-action-card">
 

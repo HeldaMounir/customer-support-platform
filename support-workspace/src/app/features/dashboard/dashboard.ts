@@ -31,9 +31,7 @@ export class Dashboard {
   requests = requests;
 
 
-  // ============================
-  // Statistics
-  // ============================
+
 
   get stats(): DashboardStat[] {
 
@@ -75,9 +73,7 @@ export class Dashboard {
   }
 
 
-  // ============================
-  // Recent Requests
-  // ============================
+  
 
   get recentRequests(): SupportRequest[] {
 
@@ -86,9 +82,6 @@ export class Dashboard {
   }
 
 
-  // ============================
-  // Status Label
-  // ============================
 
   getStatusLabel(
     status: SupportRequest['status']
@@ -108,10 +101,6 @@ export class Dashboard {
   }
 
 
-  // ============================
-  // Priority Label
-  // ============================
-
   getPriorityLabel(
     priority: SupportRequest['priority']
   ): string {
@@ -130,9 +119,7 @@ export class Dashboard {
   }
 
 
-  // ============================
-  // Customer
-  // ============================
+
 
   getCustomerName(
     request: SupportRequest
@@ -143,9 +130,6 @@ export class Dashboard {
   }
 
 
-  // ============================
-  // Relative Time
-  // ============================
 
   getRequestTime(
     request: SupportRequest

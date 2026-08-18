@@ -8,21 +8,15 @@
 // ==============================
 
 @keyframes pageEnter {
-
   from {
     opacity: 0;
-
-    transform:
-      translateY(8px);
+    transform: translateY(8px);
   }
 
   to {
     opacity: 1;
-
-    transform:
-      translateY(0);
+    transform: translateY(0);
   }
-
 }
 
 
@@ -41,11 +35,11 @@
 .eyebrow {
   color: #8b79df;
 
-  font-size: 7px;
+  font-size: 10px;
 
   font-weight: 800;
 
-  letter-spacing: 1.4px;
+  letter-spacing: 1.5px;
 }
 
 .page-heading h1 {
@@ -53,23 +47,25 @@
 
   color: #292a3b;
 
-  font-size: 23px;
+  font-size: 28px;
 
   font-weight: 750;
 
-  letter-spacing: -0.7px;
+  letter-spacing: -0.8px;
 }
 
 .page-heading h1 span {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .page-heading p {
-  margin-top: 6px;
+  margin-top: 7px;
 
   color: #999aa7;
 
-  font-size: 9px;
+  font-size: 13px;
+
+  line-height: 1.5;
 }
 
 
@@ -78,35 +74,38 @@
 // ==============================
 
 .view-button {
-  height: 37px;
+  height: 42px;
 
   display: flex;
   align-items: center;
 
-  gap: 7px;
+  gap: 8px;
 
-  padding: 0 13px;
+  padding: 0 16px;
 
   border: 1px solid #e7e5f1;
 
-  border-radius: 10px;
+  border-radius: 11px;
 
   color: #6c58d5;
 
   background: #fff;
 
-  font-size: 8px;
+  font-size: 12px;
 
   font-weight: 700;
 
   text-decoration: none;
 
-  transition: all 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .view-button svg {
-  width: 13px;
-  height: 13px;
+  width: 15px;
+  height: 15px;
 }
 
 .view-button:hover {
@@ -130,15 +129,15 @@
   grid-template-columns:
     repeat(4, 1fr);
 
-  gap: 13px;
+  gap: 15px;
 }
 
 .stat-card {
-  padding: 17px;
+  padding: 20px;
 
   border: 1px solid #ececf2;
 
-  border-radius: 15px;
+  border-radius: 16px;
 
   background: #fff;
 
@@ -166,65 +165,61 @@
 }
 
 .stat-icon {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  border-radius: 10px;
+  border-radius: 11px;
 }
 
 .stat-icon svg {
-  width: 17px;
-  height: 17px;
+  width: 19px;
+  height: 19px;
 }
 
 .stat-icon.purple {
   color: #7058e8;
-
   background: #f0edff;
 }
 
 .stat-icon.orange {
   color: #ed954d;
-
   background: #fff2e6;
 }
 
 .stat-icon.blue {
   color: #4d91e9;
-
   background: #eaf3ff;
 }
 
 .stat-icon.green {
   color: #36b987;
-
   background: #e9faf3;
 }
 
 .trend {
-  padding: 4px 6px;
+  padding: 5px 8px;
 
-  border-radius: 5px;
+  border-radius: 6px;
 
   color: #3aaf83;
 
   background: #ecfaf4;
 
-  font-size: 7px;
+  font-size: 10px;
 
   font-weight: 800;
 }
 
 .stat-value {
-  margin-top: 17px;
+  margin-top: 18px;
 
   color: #292a3b;
 
-  font-size: 24px;
+  font-size: 30px;
 
   font-weight: 750;
 
@@ -232,11 +227,11 @@
 }
 
 .stat-label {
-  margin-top: 4px;
+  margin-top: 5px;
 
   color: #999aa7;
 
-  font-size: 8px;
+  font-size: 11px;
 }
 
 
@@ -249,11 +244,11 @@
 
   grid-template-columns:
     minmax(0, 1fr)
-    270px;
+    290px;
 
-  gap: 14px;
+  gap: 16px;
 
-  margin-top: 14px;
+  margin-top: 16px;
 }
 
 
@@ -265,11 +260,11 @@
 .workload-card {
   min-width: 0;
 
-  padding: 19px;
+  padding: 22px;
 
   border: 1px solid #ececf2;
 
-  border-radius: 16px;
+  border-radius: 17px;
 
   background: #fff;
 
@@ -287,42 +282,48 @@
 .card-heading h2 {
   color: #363747;
 
-  font-size: 12px;
+  font-size: 15px;
 
   font-weight: 750;
 }
 
 .card-heading p {
-  margin-top: 4px;
+  margin-top: 5px;
 
   color: #a1a1ad;
 
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .card-heading > a {
   display: flex;
   align-items: center;
 
-  gap: 4px;
+  gap: 5px;
 
   color: #745de1;
 
-  font-size: 8px;
+  font-size: 11px;
 
   font-weight: 700;
 
   text-decoration: none;
+
+  transition: gap 0.2s ease;
+}
+
+.card-heading > a:hover {
+  gap: 8px;
 }
 
 .card-heading > a svg {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
 }
 
 .users-icon {
-  width: 17px;
-  height: 17px;
+  width: 20px;
+  height: 20px;
 
   color: #8d7be2;
 }
@@ -333,23 +334,23 @@
 // ==============================
 
 .request-list {
-  margin-top: 17px;
+  margin-top: 18px;
 }
 
 .request-row {
-  min-height: 61px;
+  min-height: 70px;
 
   display: grid;
 
   grid-template-columns:
-    minmax(190px, 1fr)
-    85px
-    65px
-    55px;
+    minmax(220px, 1fr)
+    105px
+    80px
+    70px;
 
   align-items: center;
 
-  gap: 10px;
+  gap: 12px;
 
   border-top: 1px solid #f1f1f5;
 }
@@ -360,12 +361,12 @@
   display: flex;
   align-items: center;
 
-  gap: 9px;
+  gap: 11px;
 }
 
 .request-avatar {
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
 
   display: flex;
   align-items: center;
@@ -373,13 +374,13 @@
 
   flex-shrink: 0;
 
-  border-radius: 9px;
+  border-radius: 10px;
 
   color: #7058e8;
 
   background: #f0edff;
 
-  font-size: 9px;
+  font-size: 11px;
 
   font-weight: 800;
 }
@@ -390,7 +391,7 @@
   display: flex;
   flex-direction: column;
 
-  gap: 4px;
+  gap: 5px;
 }
 
 .request-content strong {
@@ -398,7 +399,7 @@
 
   color: #444555;
 
-  font-size: 8px;
+  font-size: 11px;
 
   font-weight: 700;
 
@@ -410,7 +411,7 @@
 .request-content span {
   color: #a2a2ad;
 
-  font-size: 7px;
+  font-size: 10px;
 }
 
 
@@ -422,11 +423,11 @@
 .priority {
   width: fit-content;
 
-  padding: 5px 7px;
+  padding: 6px 9px;
 
-  border-radius: 6px;
+  border-radius: 7px;
 
-  font-size: 7px;
+  font-size: 10px;
 
   font-weight: 700;
 }
@@ -447,6 +448,12 @@
   color: #32a97d;
 
   background: #eaf9f3;
+}
+
+.status.closed {
+  color: #777987;
+
+  background: #f0f1f4;
 }
 
 
@@ -481,7 +488,7 @@
 .request-time {
   color: #aaaab4;
 
-  font-size: 7px;
+  font-size: 10px;
 
   text-align: right;
 }
@@ -492,11 +499,11 @@
 // ==============================
 
 .workload-number {
-  margin-top: 27px;
+  margin-top: 30px;
 
   color: #292a3b;
 
-  font-size: 34px;
+  font-size: 40px;
 
   font-weight: 800;
 
@@ -506,13 +513,13 @@
 .workload-label {
   color: #9a9aa7;
 
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .progress-track {
-  height: 7px;
+  height: 8px;
 
-  margin-top: 22px;
+  margin-top: 23px;
 
   overflow: hidden;
 
@@ -538,7 +545,6 @@
 }
 
 @keyframes progressLoad {
-
   from {
     width: 0;
   }
@@ -546,18 +552,17 @@
   to {
     width: 72%;
   }
-
 }
 
 .workload-footer {
   display: flex;
   justify-content: space-between;
 
-  margin-top: 8px;
+  margin-top: 9px;
 
   color: #999aa6;
 
-  font-size: 7px;
+  font-size: 10px;
 }
 
 .workload-footer strong {
@@ -573,11 +578,11 @@
   display: flex;
   flex-direction: column;
 
-  gap: 10px;
+  gap: 12px;
 
-  margin-top: 23px;
+  margin-top: 25px;
 
-  padding-top: 17px;
+  padding-top: 18px;
 
   border-top: 1px solid #f0f0f4;
 }
@@ -586,22 +591,24 @@
   display: flex;
   align-items: center;
 
-  gap: 7px;
+  gap: 8px;
 
   color: #898a97;
 
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .workload-breakdown strong {
   margin-left: auto;
 
   color: #4b4c5d;
+
+  font-size: 11px;
 }
 
 .dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 
   flex-shrink: 0;
 
@@ -622,6 +629,58 @@
 
 
 // ==============================
+// Empty State
+// ==============================
+
+.empty-state {
+  min-height: 180px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  text-align: center;
+}
+
+.empty-icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 5px;
+
+  border-radius: 12px;
+
+  color: #8b79df;
+
+  background: #f0edff;
+}
+
+.empty-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.empty-state strong {
+  color: #555666;
+
+  font-size: 11px;
+}
+
+.empty-state span {
+  color: #a2a2ad;
+
+  font-size: 10px;
+}
+
+
+// ==============================
 // Responsive
 // ==============================
 
@@ -638,6 +697,7 @@
 
 }
 
+
 @media (max-width: 700px) {
 
   .page-heading {
@@ -646,6 +706,10 @@
     flex-direction: column;
 
     gap: 15px;
+  }
+
+  .page-heading h1 {
+    font-size: 25px;
   }
 
   .stats-grid {
@@ -657,7 +721,7 @@
       minmax(0, 1fr)
       auto;
 
-    padding: 10px 0;
+    padding: 12px 0;
   }
 
   .request-time {
@@ -670,15 +734,41 @@
 
 }
 
+
 @media (max-width: 500px) {
 
   .page-heading h1 {
-    font-size: 19px;
+    font-size: 22px;
+  }
+
+  .page-heading p {
+    font-size: 12px;
   }
 
   .requests-card,
   .workload-card {
-    padding: 15px;
+    padding: 17px;
+  }
+
+  .card-heading h2 {
+    font-size: 14px;
+  }
+
+  .card-heading p {
+    font-size: 10px;
+  }
+
+  .request-content strong {
+    font-size: 10px;
+  }
+
+  .request-content span {
+    font-size: 9px;
+  }
+
+  .status,
+  .priority {
+    font-size: 9px;
   }
 
 }

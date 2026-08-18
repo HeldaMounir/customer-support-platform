@@ -1,5 +1,6 @@
 .details-page {
   animation: pageEnter 0.4s ease both;
+  font-family: "DM Sans", sans-serif;
 }
 
 @keyframes pageEnter {
@@ -14,10 +15,6 @@
   }
 }
 
-
-// ==============================
-// Back Button
-// ==============================
 
 .back-button {
   display: flex;
@@ -37,8 +34,8 @@
 
   font-family: inherit;
 
-  font-size: 8px;
-  font-weight: 650;
+  font-size: 13px;
+  font-weight: 600;
 
   cursor: pointer;
 
@@ -55,9 +52,6 @@
 }
 
 
-// ==============================
-// Header
-// ==============================
 
 .details-header {
   display: flex;
@@ -70,7 +64,7 @@
 .request-id {
   color: #8b79df;
 
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 800;
 
   letter-spacing: 0.6px;
@@ -81,8 +75,8 @@
 
   color: #292a3b;
 
-  font-size: 22px;
-  font-weight: 750;
+  font-size: 26px;
+  font-weight: 700;
 
   letter-spacing: -0.6px;
 }
@@ -92,7 +86,7 @@
 
   color: #a0a0ab;
 
-  font-size: 8px;
+  font-size: 13px;
 }
 
 .header-badges {
@@ -103,9 +97,7 @@
 }
 
 
-// ==============================
-// Badges
-// ==============================
+
 
 .badge {
   display: inline-flex;
@@ -117,8 +109,8 @@
 
   border-radius: 7px;
 
-  font-size: 7px;
-  font-weight: 750;
+  font-size: 11px;
+  font-weight: 700;
 }
 
 .status.open {
@@ -171,9 +163,7 @@
 }
 
 
-// ==============================
-// Grid
-// ==============================
+
 
 .details-grid {
   display: grid;
@@ -186,9 +176,7 @@
 }
 
 
-// ==============================
-// Main Card
-// ==============================
+
 
 .main-card,
 .side-card {
@@ -241,8 +229,8 @@
 .card-title h2 {
   color: #444555;
 
-  font-size: 11px;
-  font-weight: 750;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .card-title span {
@@ -252,13 +240,11 @@
 
   color: #a2a2ad;
 
-  font-size: 7px;
+  font-size: 11px;
 }
 
 
-// ==============================
-// Description
-// ==============================
+
 
 .description {
   min-height: 90px;
@@ -267,15 +253,12 @@
 
   color: #666776;
 
-  font-size: 9px;
+  font-size: 14px;
 
   line-height: 1.8;
 }
 
 
-// ==============================
-// Timeline
-// ==============================
 
 .timeline-section {
   padding-top: 19px;
@@ -286,8 +269,8 @@
 .timeline-section h3 {
   color: #4b4c5c;
 
-  font-size: 10px;
-  font-weight: 750;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .timeline {
@@ -337,13 +320,14 @@
 .timeline-content strong {
   color: #555666;
 
-  font-size: 8px;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .timeline-content span {
   color: #a3a3ae;
 
-  font-size: 7px;
+  font-size: 11px;
 }
 
 .timeline-line {
@@ -356,9 +340,7 @@
 }
 
 
-// ==============================
-// Side Card
-// ==============================
+
 
 .side-card {
   padding: 19px;
@@ -369,8 +351,8 @@
 
   color: #4a4b5b;
 
-  font-size: 10px;
-  font-weight: 750;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .info-row {
@@ -390,20 +372,17 @@
 .info-row span {
   color: #999aa6;
 
-  font-size: 7px;
+  font-size: 11px;
 }
 
 .info-row strong {
   color: #555666;
 
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 700;
 }
 
 
-// ==============================
-// Divider
-// ==============================
 
 .divider {
   height: 1px;
@@ -414,9 +393,7 @@
 }
 
 
-// ==============================
-// Dates
-// ==============================
+
 
 .date-row {
   display: flex;
@@ -461,20 +438,15 @@
 .date-row span {
   color: #a0a0ab;
 
-  font-size: 7px;
+  font-size: 11px;
 }
 
 .date-row strong {
   color: #5a5b6a;
 
-  font-size: 7px;
+  font-size: 12px;
+  font-weight: 600;
 }
-
-
-// ==============================
-// Category
-// ==============================
-
 .category-box {
   padding: 12px;
 
@@ -495,7 +467,7 @@
 
   color: #aaaab5;
 
-  font-size: 6px;
+  font-size: 10px;
   font-weight: 800;
 
   letter-spacing: 1px;
@@ -504,13 +476,11 @@
 .category-box strong {
   color: #7058e8;
 
-  font-size: 9px;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 
-// ==============================
-// Not Found
-// ==============================
 
 .not-found {
   min-height: 420px;
@@ -548,7 +518,8 @@
 .not-found h2 {
   color: #444555;
 
-  font-size: 13px;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .not-found p {
@@ -556,7 +527,7 @@
 
   color: #a0a0ab;
 
-  font-size: 8px;
+  font-size: 13px;
 }
 
 .back-link {
@@ -570,16 +541,14 @@
 
   background: #f0edff;
 
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 700;
 
   text-decoration: none;
 }
 
 
-// ==============================
-// Responsive
-// ==============================
+
 
 @media (max-width: 900px) {
 
@@ -588,6 +557,7 @@
   }
 
 }
+
 
 @media (max-width: 600px) {
 
@@ -600,7 +570,7 @@
   }
 
   .details-header h1 {
-    font-size: 18px;
+    font-size: 22px;
   }
 
 }

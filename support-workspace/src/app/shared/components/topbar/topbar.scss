@@ -17,12 +17,11 @@
   top: 0;
 
   z-index: 20;
+
+  font-family: "DM Sans", sans-serif;
 }
 
 
-// ==============================
-// Breadcrumb
-// ==============================
 
 .breadcrumb {
   display: flex;
@@ -30,7 +29,8 @@
 
   gap: 8px;
 
-  font-size: 9px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .breadcrumb span:first-child {
@@ -48,9 +48,7 @@
 }
 
 
-// ==============================
-// Actions
-// ==============================
+
 
 .topbar-actions {
   display: flex;
@@ -60,9 +58,7 @@
 }
 
 
-// ==============================
-// Search
-// ==============================
+
 
 .search-box {
   width: 220px;
@@ -92,7 +88,8 @@
   background: #fff;
 
   box-shadow:
-    0 0 0 3px rgba(124, 92, 255, 0.07);
+    0 0 0 3px
+    rgba(124, 92, 255, 0.07);
 }
 
 .search-icon {
@@ -114,7 +111,7 @@
 
   font-family: inherit;
 
-  font-size: 8px;
+  font-size: 13px;
 }
 
 .search-box input::placeholder {
@@ -134,13 +131,11 @@
 
   color: #aaaab5;
 
-  font-size: 6px;
+  font-size: 10px;
+  font-weight: 500;
 }
 
 
-// ==============================
-// Notification
-// ==============================
 
 .icon-button {
   width: 36px;
@@ -197,9 +192,7 @@
 }
 
 
-// ==============================
-// User
-// ==============================
+
 
 .topbar-user {
   display: flex;
@@ -214,6 +207,8 @@
   background: transparent;
 
   cursor: pointer;
+
+  font-family: inherit;
 }
 
 .user-avatar {
@@ -235,7 +230,7 @@
       #a678ff
     );
 
-  font-size: 7px;
+  font-size: 11px;
 
   font-weight: 800;
 
@@ -256,7 +251,7 @@
 .user-details strong {
   color: #454657;
 
-  font-size: 8px;
+  font-size: 13px;
 
   font-weight: 700;
 }
@@ -264,7 +259,7 @@
 .user-details span {
   color: #a1a1ac;
 
-  font-size: 7px;
+  font-size: 11px;
 }
 
 .chevron {
@@ -277,9 +272,7 @@
 }
 
 
-// ==============================
-// Responsive
-// ==============================
+
 
 @media (max-width: 850px) {
 

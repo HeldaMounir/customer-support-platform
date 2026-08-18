@@ -1,5 +1,6 @@
 .requests-page {
   animation: pageEnter 0.4s ease both;
+  font-family: "DM Sans", sans-serif;
 }
 
 @keyframes pageEnter {
@@ -30,7 +31,7 @@
 .eyebrow {
   color: #8b79df;
 
-  font-size: 7px;
+  font-size: 11px;
   font-weight: 800;
 
   letter-spacing: 1.4px;
@@ -41,8 +42,8 @@
 
   color: #292a3b;
 
-  font-size: 23px;
-  font-weight: 750;
+  font-size: 26px;
+  font-weight: 700;
 
   letter-spacing: -0.7px;
 }
@@ -52,7 +53,7 @@
 
   color: #999aa7;
 
-  font-size: 9px;
+  font-size: 13px;
 }
 
 
@@ -86,8 +87,9 @@
     0 8px 18px
     rgba(112, 88, 232, 0.18);
 
-  font-size: 8px;
-  font-weight: 750;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
 
   text-decoration: none;
 
@@ -103,7 +105,7 @@
 }
 
 .plus {
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1;
 }
 
@@ -140,13 +142,15 @@
 .mini-label {
   color: #999aa7;
 
-  font-size: 8px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .mini-stat strong {
   color: #4b4c5d;
 
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .mini-stat strong.orange {
@@ -186,7 +190,9 @@
 }
 
 
+// ==============================
 // Search
+// ==============================
 
 .search-wrapper {
   height: 36px;
@@ -240,7 +246,7 @@
 
   font-family: inherit;
 
-  font-size: 8px;
+  font-size: 13px;
 }
 
 .search-wrapper input::placeholder {
@@ -248,7 +254,9 @@
 }
 
 
+// ==============================
 // Filter
+// ==============================
 
 .filter-group {
   display: flex;
@@ -260,7 +268,8 @@
 .filter-group label {
   color: #9a9aa6;
 
-  font-size: 7px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .filter-group select {
@@ -280,13 +289,15 @@
 
   font-family: inherit;
 
-  font-size: 8px;
+  font-size: 13px;
 
   cursor: pointer;
 }
 
 
+// ==============================
 // Clear
+// ==============================
 
 .clear-button {
   height: 36px;
@@ -303,7 +314,8 @@
 
   font-family: inherit;
 
-  font-size: 8px;
+  font-size: 12px;
+  font-weight: 500;
 
   cursor: pointer;
 
@@ -353,8 +365,8 @@
 .table-header h2 {
   color: #363747;
 
-  font-size: 12px;
-  font-weight: 750;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .table-header span {
@@ -366,7 +378,8 @@
 
   background: #f4f4f7;
 
-  font-size: 7px;
+  font-size: 11px;
+  font-weight: 500;
 }
 
 
@@ -395,8 +408,8 @@ th {
 
   color: #a0a0ac;
 
-  font-size: 7px;
-  font-weight: 750;
+  font-size: 11px;
+  font-weight: 700;
 
   text-align: left;
 
@@ -447,7 +460,7 @@ tbody tr:hover {
 
   background: #f0edff;
 
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 800;
 }
 
@@ -467,7 +480,7 @@ tbody tr:hover {
 
   color: #444555;
 
-  font-size: 8px;
+  font-size: 13px;
   font-weight: 700;
 
   text-overflow: ellipsis;
@@ -477,7 +490,7 @@ tbody tr:hover {
 .request-info span {
   color: #a3a3ae;
 
-  font-size: 7px;
+  font-size: 11px;
 }
 
 
@@ -488,7 +501,7 @@ tbody tr:hover {
 .category {
   color: #777887;
 
-  font-size: 8px;
+  font-size: 12px;
 }
 
 
@@ -508,12 +521,14 @@ tbody tr:hover {
 
   border-radius: 6px;
 
-  font-size: 7px;
+  font-size: 11px;
   font-weight: 700;
 }
 
 
+// ==============================
 // Priority
+// ==============================
 
 .priority.low {
   color: #707887;
@@ -536,7 +551,9 @@ tbody tr:hover {
 }
 
 
+// ==============================
 // Status
+// ==============================
 
 .status.open {
   color: #d27c2d;
@@ -575,7 +592,7 @@ tbody tr:hover {
 .date {
   color: #999aa7;
 
-  font-size: 7px;
+  font-size: 11px;
 
   white-space: nowrap;
 }
@@ -659,7 +676,8 @@ tbody tr:hover {
 .empty-state h3 {
   color: #444555;
 
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .empty-state p {
@@ -667,7 +685,7 @@ tbody tr:hover {
 
   color: #a0a0ab;
 
-  font-size: 8px;
+  font-size: 13px;
 }
 
 .empty-state button {
@@ -684,7 +702,8 @@ tbody tr:hover {
 
   font-family: inherit;
 
-  font-size: 8px;
+  font-size: 12px;
+  font-weight: 500;
 
   cursor: pointer;
 }
@@ -711,6 +730,7 @@ tbody tr:hover {
   }
 
 }
+
 
 @media (max-width: 600px) {
 

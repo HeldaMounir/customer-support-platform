@@ -6,7 +6,6 @@ import {
   LogOut,
   Settings,
   Ticket,
-  User,
 } from "lucide-react";
 
 const navigation = [
@@ -19,12 +18,7 @@ const navigation = [
     name: "My Requests",
     path: "/requests",
     icon: Ticket,
-  },
-  {
-    name: "Profile",
-    path: "/profile",
-    icon: User,
-  },
+  }
 ];
 
 export default function Sidebar() {

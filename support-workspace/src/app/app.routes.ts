@@ -11,12 +11,26 @@ export const routes: Routes = [
         redirectTo: 'dashboard',
         pathMatch: 'full',
       },
+
       {
         path: 'dashboard',
         loadComponent: () =>
           import('./features/dashboard/dashboard')
             .then((m) => m.Dashboard),
       },
+
+      {
+        path: 'requests',
+        loadComponent: () =>
+          import('./features/requests/requests')
+            .then((m) => m.Requests),
+      },
+      {
+  path: 'requests/:id',
+  loadComponent: () =>
+    import('./features/request-details/request-details')
+      .then((m) => m.RequestDetails),
+},
     ],
   },
 

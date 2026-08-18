@@ -1,0 +1,124 @@
+<aside class="sidebar">
+
+  <div class="brand">
+
+    <div class="brand-icon">
+      <lucide-icon
+        name="headphones"
+        [size]="20"
+      />
+    </div>
+
+    <div class="brand-text">
+      <strong>Supportly</strong>
+      <span>WORKSPACE</span>
+    </div>
+
+  </div>
+
+  <div class="workspace-label">
+    WORKSPACE
+  </div>
+
+  <nav class="nav">
+
+    <a
+      routerLink="/dashboard"
+      routerLinkActive="active"
+      class="nav-item"
+    >
+      <lucide-icon
+        name="layout-dashboard"
+        [size]="18"
+      />
+
+      <span>Dashboard</span>
+    </a>
+
+    <a
+      routerLink="/requests"
+      routerLinkActive="active"
+      class="nav-item"
+    >
+      <lucide-icon
+        name="inbox"
+        [size]="18"
+      />
+
+      <span>Requests</span>
+
+      <span class="nav-count">
+        24
+      </span>
+    </a>
+
+    <a
+      routerLink="/customers"
+      routerLinkActive="active"
+      class="nav-item"
+    >
+      <lucide-icon
+        name="users"
+        [size]="18"
+      />
+
+      <span>Customers</span>
+    </a>
+
+    <a
+      routerLink="/analytics"
+      routerLinkActive="active"
+      class="nav-item"
+    >
+      <lucide-icon
+        name="bar-chart-3"
+        [size]="18"
+      />
+
+      <span>Analytics</span>
+    </a>
+
+  </nav>
+
+  <div class="sidebar-spacer"></div>
+
+  <div class="nav-divider"></div>
+
+  <nav class="nav bottom-nav">
+
+    <a class="nav-item">
+      <lucide-icon
+        name="help-circle"
+        [size]="18"
+      />
+
+      <span>Help Center</span>
+    </a>
+
+    <a class="nav-item">
+      <lucide-icon
+        name="settings"
+        [size]="18"
+      />
+
+      <span>Settings</span>
+    </a>
+
+  </nav>
+
+  <div class="agent-card">
+
+    <div class="agent-avatar">
+      HM
+    </div>
+
+    <div class="agent-info">
+      <strong>Helda Mounir</strong>
+      <span>Support Agent</span>
+    </div>
+
+    <span class="online-dot"></span>
+
+  </div>
+
+</aside>

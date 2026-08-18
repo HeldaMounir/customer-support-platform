@@ -1,0 +1,455 @@
+<section class="dashboard">
+
+  <!-- ========================= -->
+  <!-- Page Header -->
+  <!-- ========================= -->
+
+  <div class="page-heading">
+
+    <div class="heading-content">
+
+      <span class="eyebrow">
+        SUPPORT OPERATIONS
+      </span>
+
+      <h1>
+        Good morning, Helda
+        <span>👋</span>
+      </h1>
+
+      <p>
+        Here's what's happening with your support
+        requests today.
+      </p>
+
+    </div>
+
+
+    <a
+      routerLink="/requests"
+      class="view-button"
+    >
+
+      <span>
+        View all requests
+      </span>
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M5 12h14"></path>
+        <path d="m12 5 7 7-7 7"></path>
+      </svg>
+
+    </a>
+
+  </div>
+
+
+  <!-- ========================= -->
+  <!-- Statistics -->
+  <!-- ========================= -->
+
+  <div class="stats-grid">
+
+    @for (stat of stats; track stat.label) {
+
+      <article class="stat-card">
+
+        <div class="stat-top">
+
+          <div
+            class="stat-icon"
+            [class.purple]="stat.tone === 'purple'"
+            [class.orange]="stat.tone === 'orange'"
+            [class.blue]="stat.tone === 'blue'"
+            [class.green]="stat.tone === 'green'"
+          >
+
+            @if (stat.tone === 'purple') {
+
+              <!-- Inbox icon -->
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
+                <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"></path>
+              </svg>
+
+            }
+
+
+            @if (stat.tone === 'orange') {
+
+              <!-- Alert icon -->
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+
+            }
+
+
+            @if (stat.tone === 'blue') {
+
+              <!-- Clock icon -->
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+
+            }
+
+
+            @if (stat.tone === 'green') {
+
+              <!-- Check icon -->
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+
+            }
+
+          </div>
+
+
+          <span class="trend">
+            {{ stat.change }}
+          </span>
+
+        </div>
+
+
+        <div class="stat-value">
+          {{ stat.value }}
+        </div>
+
+        <div class="stat-label">
+          {{ stat.label }}
+        </div>
+
+      </article>
+
+    }
+
+  </div>
+
+
+  <!-- ========================= -->
+  <!-- Main Dashboard Grid -->
+  <!-- ========================= -->
+
+  <div class="dashboard-grid">
+
+
+    <!-- ========================= -->
+    <!-- Recent Requests -->
+    <!-- ========================= -->
+
+    <section class="requests-card">
+
+      <div class="card-heading">
+
+        <div>
+
+          <h2>
+            Recent requests
+          </h2>
+
+          <p>
+            Latest customer support activity
+          </p>
+
+        </div>
+
+
+        <a routerLink="/requests">
+
+          <span>
+            View all
+          </span>
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+
+        </a>
+
+      </div>
+
+
+      <div class="request-list">
+
+        @for (
+          request of requests;
+          track request.id
+        ) {
+
+          <div class="request-row">
+
+
+            <!-- Customer -->
+
+            <div class="request-main">
+
+              <div class="request-avatar">
+                {{ request.customer.charAt(0) }}
+              </div>
+
+
+              <div class="request-content">
+
+                <strong>
+                  {{ request.title }}
+                </strong>
+
+                <span>
+                  {{ request.id }}
+                  ·
+                  {{ request.customer }}
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- Status -->
+
+            <span
+              class="status"
+
+              [class.open]="
+                request.status === 'Open'
+              "
+
+              [class.progress]="
+                request.status === 'In Progress'
+              "
+
+              [class.resolved]="
+                request.status === 'Resolved'
+              "
+            >
+
+              {{ request.status }}
+
+            </span>
+
+
+            <!-- Priority -->
+
+            <span
+              class="priority"
+
+              [class.high]="
+                request.priority === 'High'
+              "
+
+              [class.urgent]="
+                request.priority === 'Urgent'
+              "
+
+              [class.medium]="
+                request.priority === 'Medium'
+              "
+
+              [class.low]="
+                request.priority === 'Low'
+              "
+            >
+
+              {{ request.priority }}
+
+            </span>
+
+
+            <!-- Time -->
+
+            <span class="request-time">
+              {{ request.time }}
+            </span>
+
+          </div>
+
+        }
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================= -->
+    <!-- Workload -->
+    <!-- ========================= -->
+
+    <aside class="workload-card">
+
+      <div class="card-heading">
+
+        <div>
+
+          <h2>
+            My workload
+          </h2>
+
+          <p>
+            Current assigned requests
+          </p>
+
+        </div>
+
+
+        <!-- Users icon -->
+
+        <svg
+          class="users-icon"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+
+      </div>
+
+
+      <div class="workload-number">
+        18
+      </div>
+
+      <span class="workload-label">
+        Active requests assigned to you
+      </span>
+
+
+      <!-- Progress -->
+
+      <div class="progress-track">
+
+        <div class="progress-fill"></div>
+
+      </div>
+
+
+      <div class="workload-footer">
+
+        <span>
+          72% of daily capacity
+        </span>
+
+        <strong>
+          18 / 25
+        </strong>
+
+      </div>
+
+
+      <!-- Breakdown -->
+
+      <div class="workload-breakdown">
+
+
+        <div>
+
+          <span class="dot orange"></span>
+
+          <span>
+            High priority
+          </span>
+
+          <strong>
+            5
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span class="dot blue"></span>
+
+          <span>
+            Normal
+          </span>
+
+          <strong>
+            9
+          </strong>
+
+        </div>
+
+
+        <div>
+
+          <span class="dot green"></span>
+
+          <span>
+            Low priority
+          </span>
+
+          <strong>
+            4
+          </strong>
+
+        </div>
+
+
+      </div>
+
+    </aside>
+
+  </div>
+
+</section>

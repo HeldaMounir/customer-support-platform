@@ -1,7 +1,7 @@
 <section class="dashboard">
 
   <!-- ========================= -->
-  <!-- Page Header -->
+  <!-- Page Heading -->
   <!-- ========================= -->
 
   <div class="page-heading">
@@ -57,7 +57,10 @@
 
   <div class="stats-grid">
 
-    @for (stat of stats; track stat.label) {
+    @for (
+      stat of stats;
+      track stat.label
+    ) {
 
       <article class="stat-card">
 
@@ -65,15 +68,27 @@
 
           <div
             class="stat-icon"
-            [class.purple]="stat.tone === 'purple'"
-            [class.orange]="stat.tone === 'orange'"
-            [class.blue]="stat.tone === 'blue'"
-            [class.green]="stat.tone === 'green'"
+
+            [class.purple]="
+              stat.tone === 'purple'
+            "
+
+            [class.orange]="
+              stat.tone === 'orange'
+            "
+
+            [class.blue]="
+              stat.tone === 'blue'
+            "
+
+            [class.green]="
+              stat.tone === 'green'
+            "
           >
 
-            @if (stat.tone === 'purple') {
-
-              <!-- Inbox icon -->
+            @if (
+              stat.tone === 'purple'
+            ) {
 
               <svg
                 viewBox="0 0 24 24"
@@ -83,16 +98,21 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
-                <polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
-                <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"></path>
+                <polyline
+                  points="22 12 16 12 14 15 10 15 8 12 2 12"
+                ></polyline>
+
+                <path
+                  d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z"
+                ></path>
               </svg>
 
             }
 
 
-            @if (stat.tone === 'orange') {
-
-              <!-- Alert icon -->
+            @if (
+              stat.tone === 'orange'
+            ) {
 
               <svg
                 viewBox="0 0 24 24"
@@ -102,17 +122,33 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="8" x2="12" y2="12"></line>
-                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                ></circle>
+
+                <line
+                  x1="12"
+                  y1="8"
+                  x2="12"
+                  y2="12"
+                ></line>
+
+                <line
+                  x1="12"
+                  y1="16"
+                  x2="12.01"
+                  y2="16"
+                ></line>
               </svg>
 
             }
 
 
-            @if (stat.tone === 'blue') {
-
-              <!-- Clock icon -->
+            @if (
+              stat.tone === 'blue'
+            ) {
 
               <svg
                 viewBox="0 0 24 24"
@@ -122,16 +158,23 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                ></circle>
+
+                <polyline
+                  points="12 6 12 12 16 14"
+                ></polyline>
               </svg>
 
             }
 
 
-            @if (stat.tone === 'green') {
-
-              <!-- Check icon -->
+            @if (
+              stat.tone === 'green'
+            ) {
 
               <svg
                 viewBox="0 0 24 24"
@@ -141,8 +184,15 @@
                 stroke-linecap="round"
                 stroke-linejoin="round"
               >
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="m9 12 2 2 4-4"></path>
+                <circle
+                  cx="12"
+                  cy="12"
+                  r="10"
+                ></circle>
+
+                <path
+                  d="m9 12 2 2 4-4"
+                ></path>
               </svg>
 
             }
@@ -200,7 +250,10 @@
         </div>
 
 
-        <a routerLink="/requests">
+        <a
+          routerLink="/requests"
+          class="card-link"
+        >
 
           <span>
             View all
@@ -226,19 +279,19 @@
       <div class="request-list">
 
         @for (
-          request of requests;
+          request of recentRequests;
           track request.id
         ) {
 
           <div class="request-row">
 
 
-            <!-- Customer -->
+            <!-- Request -->
 
             <div class="request-main">
 
               <div class="request-avatar">
-                {{ request.customer.charAt(0) }}
+                {{ getCustomerName(request).charAt(0) }}
               </div>
 
 
@@ -251,7 +304,7 @@
                 <span>
                   {{ request.id }}
                   ·
-                  {{ request.customer }}
+                  {{ getCustomerName(request) }}
                 </span>
 
               </div>
@@ -265,19 +318,25 @@
               class="status"
 
               [class.open]="
-                request.status === 'Open'
+                request.status === 'open'
               "
 
               [class.progress]="
-                request.status === 'In Progress'
+                request.status === 'in-progress'
               "
 
               [class.resolved]="
-                request.status === 'Resolved'
+                request.status === 'resolved'
+              "
+
+              [class.closed]="
+                request.status === 'closed'
               "
             >
 
-              {{ request.status }}
+              <span class="status-dot"></span>
+
+              {{ getStatusLabel(request.status) }}
 
             </span>
 
@@ -288,23 +347,23 @@
               class="priority"
 
               [class.high]="
-                request.priority === 'High'
+                request.priority === 'high'
               "
 
               [class.urgent]="
-                request.priority === 'Urgent'
+                request.priority === 'urgent'
               "
 
               [class.medium]="
-                request.priority === 'Medium'
+                request.priority === 'medium'
               "
 
               [class.low]="
-                request.priority === 'Low'
+                request.priority === 'low'
               "
             >
 
-              {{ request.priority }}
+              {{ getPriorityLabel(request.priority) }}
 
             </span>
 
@@ -312,7 +371,39 @@
             <!-- Time -->
 
             <span class="request-time">
-              {{ request.time }}
+              {{ getRequestTime(request) }}
+            </span>
+
+          </div>
+
+        }
+
+
+        @if (recentRequests.length === 0) {
+
+          <div class="empty-state">
+
+            <div class="empty-icon">
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.7"
+              >
+                <path
+                  d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"
+                ></path>
+              </svg>
+
+            </div>
+
+            <strong>
+              No requests yet
+            </strong>
+
+            <span>
+              New customer requests will appear here.
             </span>
 
           </div>
@@ -345,8 +436,6 @@
         </div>
 
 
-        <!-- Users icon -->
-
         <svg
           class="users-icon"
           viewBox="0 0 24 24"
@@ -356,10 +445,23 @@
           stroke-linecap="round"
           stroke-linejoin="round"
         >
-          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-          <circle cx="9" cy="7" r="4"></circle>
-          <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          <path
+            d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"
+          ></path>
+
+          <circle
+            cx="9"
+            cy="7"
+            r="4"
+          ></circle>
+
+          <path
+            d="M22 21v-2a4 4 0 0 0-3-3.87"
+          ></path>
+
+          <path
+            d="M16 3.13a4 4 0 0 1 0 7.75"
+          ></path>
         </svg>
 
       </div>
@@ -399,7 +501,6 @@
       <!-- Breakdown -->
 
       <div class="workload-breakdown">
-
 
         <div>
 
@@ -444,7 +545,6 @@
           </strong>
 
         </div>
-
 
       </div>
 

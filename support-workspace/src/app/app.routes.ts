@@ -5,7 +5,9 @@ export const routes: Routes = [
   {
     path: '',
     component: Layout,
+
     children: [
+
       {
         path: '',
         redirectTo: 'dashboard',
@@ -25,12 +27,21 @@ export const routes: Routes = [
           import('./features/requests/requests')
             .then((m) => m.Requests),
       },
+
       {
-  path: 'requests/:id',
-  loadComponent: () =>
-    import('./features/request-details/request-details')
-      .then((m) => m.RequestDetails),
-},
+        path: 'requests/create',
+        loadComponent: () =>
+          import('./features/create-request/create-request')
+            .then((m) => m.CreateRequest),
+      },
+
+      {
+        path: 'requests/:id',
+        loadComponent: () =>
+          import('./features/request-details/request-details')
+            .then((m) => m.RequestDetails),
+      },
+
     ],
   },
 

@@ -1,21 +1,23 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-interface Stat {
+import {
+  requests,
+  SupportRequest,
+} from '../../data/requests';
+
+type StatTone =
+  | 'purple'
+  | 'orange'
+  | 'blue'
+  | 'green';
+
+type DashboardStat = {
   label: string;
   value: number;
   change: string;
-  tone: 'purple' | 'orange' | 'blue' | 'green';
-}
-
-interface RequestItem {
-  id: string;
-  title: string;
-  customer: string;
-  status: 'Open' | 'In Progress' | 'Resolved';
-  priority: 'Low' | 'Medium' | 'High' | 'Urgent';
-  time: string;
-}
+  tone: StatTone;
+};
 
 @Component({
   selector: 'app-dashboard',
@@ -26,73 +28,177 @@ interface RequestItem {
 })
 export class Dashboard {
 
-  stats: Stat[] = [
-    {
-      label: 'Total Requests',
-      value: 128,
-      change: '+12.5%',
-      tone: 'purple',
-    },
-    {
-      label: 'Open Requests',
-      value: 24,
-      change: '+4.2%',
-      tone: 'orange',
-    },
-    {
-      label: 'In Progress',
-      value: 37,
-      change: '+8.1%',
-      tone: 'blue',
-    },
-    {
-      label: 'Resolved',
-      value: 67,
-      change: '+15.4%',
-      tone: 'green',
-    },
-  ];
+  requests = requests;
 
-  requests: RequestItem[] = [
-    {
-      id: 'REQ-1048',
-      title: 'Unable to update my profile',
-      customer: 'Maya Hassan',
-      status: 'In Progress',
-      priority: 'High',
-      time: '12 min ago',
-    },
-    {
-      id: 'REQ-1047',
-      title: 'Payment was charged twice',
-      customer: 'Omar Adel',
-      status: 'Open',
-      priority: 'Urgent',
-      time: '28 min ago',
-    },
-    {
-      id: 'REQ-1046',
-      title: 'Cannot reset my password',
-      customer: 'Sara Nabil',
-      status: 'In Progress',
-      priority: 'Medium',
-      time: '42 min ago',
-    },
-    {
-      id: 'REQ-1045',
-      title: 'Order delivery information',
-      customer: 'Karim Samir',
-      status: 'Resolved',
-      priority: 'Low',
-      time: '1 hr ago',
-    },
-    {
-      id: 'REQ-1044',
-      title: 'App keeps logging me out',
-      customer: 'Nour Ali',
-      status: 'Open',
-      priority: 'High',
-      time: '2 hrs ago',
-    },
-  ];
+
+  // ============================
+  // Statistics
+  // ============================
+
+  get stats(): DashboardStat[] {
+
+    return [
+      {
+        label: 'Total requests',
+        value: requests.length,
+        change: 'All requests',
+        tone: 'purple',
+      },
+
+      {
+        label: 'Open requests',
+        value: requests.filter(
+          request => request.status === 'open'
+        ).length,
+        change: 'Needs attention',
+        tone: 'orange',
+      },
+
+      {
+        label: 'In progress',
+        value: requests.filter(
+          request => request.status === 'in-progress'
+        ).length,
+        change: 'Currently working',
+        tone: 'blue',
+      },
+
+      {
+        label: 'Resolved',
+        value: requests.filter(
+          request => request.status === 'resolved'
+        ).length,
+        change: 'Successfully resolved',
+        tone: 'green',
+      },
+    ];
+  }
+
+
+  // ============================
+  // Recent Requests
+  // ============================
+
+  get recentRequests(): SupportRequest[] {
+
+    return requests.slice(0, 5);
+
+  }
+
+
+  // ============================
+  // Status Label
+  // ============================
+
+  getStatusLabel(
+    status: SupportRequest['status']
+  ): string {
+
+    const labels: Record<
+      SupportRequest['status'],
+      string
+    > = {
+      open: 'Open',
+      'in-progress': 'In Progress',
+      resolved: 'Resolved',
+      closed: 'Closed',
+    };
+
+    return labels[status];
+  }
+
+
+  // ============================
+  // Priority Label
+  // ============================
+
+  getPriorityLabel(
+    priority: SupportRequest['priority']
+  ): string {
+
+    const labels: Record<
+      SupportRequest['priority'],
+      string
+    > = {
+      low: 'Low',
+      medium: 'Medium',
+      high: 'High',
+      urgent: 'Urgent',
+    };
+
+    return labels[priority];
+  }
+
+
+  // ============================
+  // Customer
+  // ============================
+
+  getCustomerName(
+    request: SupportRequest
+  ): string {
+
+    return 'Customer';
+
+  }
+
+
+  // ============================
+  // Relative Time
+  // ============================
+
+  getRequestTime(
+    request: SupportRequest
+  ): string {
+
+    return this.formatRelativeDate(
+      request.updatedAt
+    );
+
+  }
+
+
+  private formatRelativeDate(
+    date: string
+  ): string {
+
+    const requestDate =
+      new Date(date);
+
+    const now =
+      new Date();
+
+    const difference =
+      now.getTime() -
+      requestDate.getTime();
+
+    const minutes =
+      Math.floor(
+        difference / (1000 * 60)
+      );
+
+    if (minutes < 1) {
+      return 'Just now';
+    }
+
+    if (minutes < 60) {
+      return `${minutes}m ago`;
+    }
+
+    const hours =
+      Math.floor(minutes / 60);
+
+    if (hours < 24) {
+      return `${hours}h ago`;
+    }
+
+    const days =
+      Math.floor(hours / 24);
+
+    if (days === 1) {
+      return 'Yesterday';
+    }
+
+    return `${days}d ago`;
+  }
 }

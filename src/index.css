@@ -1,13 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
 
 :root {
-  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+  font-family: "Cairo", sans-serif;
 
   color: #171827;
   background: #f7f7fb;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -124,7 +127,7 @@ button {
 .brand-text strong {
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 18px;
+  font-size: 21.6px;
 
   letter-spacing: -0.5px;
 }
@@ -134,7 +137,7 @@ button {
 
   color: #9699aa;
 
-  font-size: 10px;
+  font-size: 12px;
 
   letter-spacing: 0.5px;
 }
@@ -154,7 +157,7 @@ button {
 
   color: #a4a5b3;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -187,7 +190,7 @@ button {
 
   text-decoration: none;
 
-  font-size: 13px;
+  font-size: 15.6px;
   font-weight: 500;
 
   transition:
@@ -248,7 +251,7 @@ button {
 
   background: #eae7ff;
 
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 700;
 }
 
@@ -311,7 +314,7 @@ button {
 }
 
 .support-card strong {
-  font-size: 11px;
+  font-size: 13.2px;
 }
 
 .support-card span {
@@ -319,7 +322,7 @@ button {
 
   color: #999bac;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .logout-button {
@@ -338,7 +341,7 @@ button {
 
   border-radius: 10px;
 
-  font-size: 12px;
+  font-size: 14.4px;
 
   transition: 0.2s;
 }
@@ -407,7 +410,7 @@ button {
 
   color: #252636;
 
-  font-size: 12px;
+  font-size: 14.4px;
 }
 
 .topbar-search input::placeholder {
@@ -425,7 +428,7 @@ button {
 
   border-radius: 6px;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .topbar-actions {
@@ -513,7 +516,7 @@ button {
       #9b7cff
     );
 
-  font-size: 11px;
+  font-size: 13.2px;
 
   font-weight: 700;
 
@@ -532,7 +535,7 @@ button {
 .user-info strong {
   color: #292a38;
 
-  font-size: 11px;
+  font-size: 13.2px;
 }
 
 .user-info span {
@@ -540,7 +543,7 @@ button {
 
   color: #a0a1ad;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 /* =========================
@@ -715,7 +718,7 @@ button {
 
   color: #d9d5ff;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 600;
 
@@ -752,7 +755,7 @@ button {
 
   color: #c6c3da;
 
-  font-size: 13px;
+  font-size: 15.6px;
 
   line-height: 1.8;
 }
@@ -773,7 +776,7 @@ button {
 
   border-radius: 10px;
 
-  font-size: 11px;
+  font-size: 13.2px;
 
   font-weight: 700;
 
@@ -871,7 +874,7 @@ button {
 }
 
 .floating-card strong {
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .floating-card span {
@@ -879,7 +882,7 @@ button {
 
   color: #b9b5d1;
 
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .card-one {
@@ -988,7 +991,7 @@ button {
 .stat-content span {
   color: #9395a4;
 
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .stat-content strong {
@@ -998,7 +1001,7 @@ button {
 
   color: #202131;
 
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .stat-trend,
@@ -1010,7 +1013,7 @@ button {
 
   gap: 3px;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 600;
 }
@@ -1048,7 +1051,7 @@ button {
 .section-label {
   color: #8066ed;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -1062,7 +1065,7 @@ button {
 
   color: #202131;
 
-  font-size: 22px;
+  font-size: 26.4px;
 
   letter-spacing: -0.6px;
 }
@@ -1072,7 +1075,7 @@ button {
 
   color: #9698a7;
 
-  font-size: 11px;
+  font-size: 13.2px;
 }
 
 .view-all {
@@ -1085,7 +1088,7 @@ button {
 
   background: transparent;
 
-  font-size: 11px;
+  font-size: 13.2px;
 
   font-weight: 600;
 
@@ -1169,7 +1172,7 @@ button {
 .request-id {
   color: #9a9baa;
 
-  font-size: 8px;
+  font-size: 12px;
 
   font-weight: 600;
 
@@ -1181,7 +1184,7 @@ button {
 
   color: #292a38;
 
-  font-size: 12px;
+  font-size: 14.4px;
 
   font-weight: 600;
 }
@@ -1196,7 +1199,7 @@ button {
 
   color: #a0a1ae;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .dot {
@@ -1221,7 +1224,7 @@ button {
 
   border-radius: 7px;
 
-  font-size: 8px;
+  font-size: 12px;
 
   font-weight: 600;
 }
@@ -1371,7 +1374,7 @@ button {
     min-width: 16px;
     height: 16px;
 
-    font-size: 7px;
+    font-size: 12px;
   }
 
   .main-wrapper {
@@ -1405,7 +1408,7 @@ button {
 
     font-family: "Space Grotesk", sans-serif;
 
-    font-size: 16px;
+    font-size: 19.2px;
 
     font-weight: 600;
   }
@@ -1430,13 +1433,13 @@ button {
   }
 
   .hero-content h1 {
-    font-size: 38px;
+    font-size: 45.6px;
 
     letter-spacing: -1.5px;
   }
 
   .hero-content p {
-    font-size: 12px;
+    font-size: 14.4px;
   }
 
   .modern-stat-card {
@@ -1622,7 +1625,7 @@ button {
 .login-brand strong {
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 17px;
+  font-size: 20.4px;
 }
 
 .login-brand span {
@@ -1630,7 +1633,7 @@ button {
 
   color: #a9a5c7;
 
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .showcase-content {
@@ -1661,7 +1664,7 @@ button {
 
   background: rgba(255,255,255,0.07);
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .showcase-content h1 {
@@ -1696,7 +1699,7 @@ button {
 
   color: #bcb9d2;
 
-  font-size: 12px;
+  font-size: 14.4px;
 
   line-height: 1.8;
 }
@@ -1733,7 +1736,7 @@ button {
 
   background: rgba(255,255,255,0.06);
 
-  font-size: 8px;
+  font-size: 12px;
 
   font-weight: 700;
 }
@@ -1741,7 +1744,7 @@ button {
 .showcase-features strong {
   display: block;
 
-  font-size: 11px;
+  font-size: 13.2px;
 }
 
 .showcase-features span {
@@ -1751,7 +1754,7 @@ button {
 
   color: #9f9cb8;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .login-footer {
@@ -1761,7 +1764,7 @@ button {
 
   color: #8985a4;
 
-  font-size: 8px;
+  font-size: 12px;
 }
 
 /* Form */
@@ -1789,7 +1792,7 @@ button {
 .form-eyebrow {
   color: #755eea;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -1803,7 +1806,7 @@ button {
 
   color: #202131;
 
-  font-size: 28px;
+  font-size: 33.6px;
 
   letter-spacing: -1px;
 }
@@ -1813,7 +1816,7 @@ button {
 
   color: #9698a7;
 
-  font-size: 11px;
+  font-size: 13.2px;
 
   line-height: 1.6;
 }
@@ -1835,7 +1838,7 @@ button {
 .form-group label {
   color: #4e5060;
 
-  font-size: 10px;
+  font-size: 12px;
 
   font-weight: 600;
 }
@@ -1851,7 +1854,7 @@ button {
 
   background: transparent;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 600;
 }
@@ -1903,7 +1906,7 @@ button {
 
   background: transparent;
 
-  font-size: 11px;
+  font-size: 13.2px;
 }
 
 .input-wrapper input::placeholder {
@@ -1928,7 +1931,7 @@ button {
 
   color: #8e909e;
 
-  font-size: 9px;
+  font-size: 12px;
 
   cursor: pointer;
 }
@@ -1959,7 +1962,7 @@ button {
       #5b72ee
     );
 
-  font-size: 11px;
+  font-size: 13.2px;
 
   font-weight: 600;
 
@@ -1990,7 +1993,7 @@ button {
 
   color: #b0b1bb;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .login-divider::before,
@@ -2017,7 +2020,7 @@ button {
 
   background: white;
 
-  font-size: 10px;
+  font-size: 12px;
 
   font-weight: 600;
 
@@ -2039,7 +2042,7 @@ button {
 
   text-align: center;
 
-  font-size: 8px;
+  font-size: 12px;
 
   line-height: 1.6;
 }
@@ -2087,7 +2090,7 @@ button {
   .mobile-login-brand strong {
     font-family: "Space Grotesk", sans-serif;
 
-    font-size: 17px;
+    font-size: 20.4px;
   }
 }
 
@@ -2105,7 +2108,7 @@ button {
   }
 
   .login-heading h2 {
-    font-size: 25px;
+    font-size: 30px;
   }
 }
 .field-error {
@@ -2113,7 +2116,7 @@ button {
 
   color: #d95668;
 
-  font-size: 9px;
+  font-size: 12px;
 
   line-height: 1.4;
 }
@@ -2221,7 +2224,7 @@ button {
 
   background: #eefaf4;
 
-  font-size: 8px;
+  font-size: 12px;
 
   font-weight: 700;
 }
@@ -2233,7 +2236,7 @@ button {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 29px;
+  font-size: 34.8px;
 
   font-weight: 700;
 
@@ -2245,7 +2248,7 @@ button {
 
   color: #454758;
 
-  font-size: 11px;
+  font-size: 13.2px;
 
   font-weight: 700;
 }
@@ -2255,7 +2258,7 @@ button {
 
   color: #a0a1ae;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 /* =========================
    CUSTOMER DASHBOARD
@@ -2280,7 +2283,7 @@ button {
 .dashboard-eyebrow {
   color: #806bea;
 
-  font-size: 8px;
+  font-size: 12px;
 
   font-weight: 800;
 
@@ -2294,7 +2297,7 @@ button {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 28px;
+  font-size: 33.6px;
 
   letter-spacing: -1px;
 }
@@ -2304,7 +2307,7 @@ button {
 
   color: #999aa8;
 
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .primary-action {
@@ -2327,7 +2330,7 @@ button {
       #5b72ee
     );
 
-  font-size: 10px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -2392,7 +2395,7 @@ button {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 14px;
+  font-size: 16.8px;
 }
 
 .section-header p {
@@ -2400,7 +2403,7 @@ button {
 
   color: #a1a2ae;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .text-action {
@@ -2414,7 +2417,7 @@ button {
 
   background: transparent;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 }
@@ -2488,7 +2491,7 @@ button {
 
   color: #353647;
 
-  font-size: 10px;
+  font-size: 12px;
 
   text-overflow: ellipsis;
 
@@ -2498,7 +2501,7 @@ button {
 .request-info span {
   color: #a3a4b0;
 
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .status-badge {
@@ -2508,7 +2511,7 @@ button {
 
   border-radius: 20px;
 
-  font-size: 8px;
+  font-size: 12px;
 
   font-weight: 700;
 }
@@ -2602,7 +2605,7 @@ button {
 .quick-action-card h2 {
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 18px;
+  font-size: 21.6px;
 }
 
 .quick-action-card p {
@@ -2612,7 +2615,7 @@ button {
 
   color: #bdb8d8;
 
-  font-size: 9px;
+  font-size: 12px;
 
   line-height: 1.7;
 }
@@ -2636,7 +2639,7 @@ button {
 
   background: white;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -2727,7 +2730,7 @@ button {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 28px;
+  font-size: 33.6px;
 
   letter-spacing: -1px;
 }
@@ -2737,7 +2740,7 @@ button {
 
   color: #999aa8;
 
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .requests-toolbar {
@@ -2795,7 +2798,7 @@ button {
 
   background: transparent;
 
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .request-search input::placeholder {
@@ -2832,7 +2835,7 @@ button {
 
   background: white;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -2879,7 +2882,7 @@ button {
 .filter-group label {
   color: #707181;
 
-  font-size: 8px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -2905,7 +2908,7 @@ button {
 
   background: white;
 
-  font-size: 9px;
+  font-size: 12px;
 
   cursor: pointer;
 }
@@ -2921,7 +2924,7 @@ button {
 
   background: #f0edff;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 }
@@ -2939,13 +2942,13 @@ button {
 .requests-results-header strong {
   color: #303141;
 
-  font-size: 11px;
+  font-size: 13.2px;
 }
 
 .requests-results-header span {
   color: #a0a1ad;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .filtered-label {
@@ -3058,7 +3061,7 @@ button {
 
   color: #303141;
 
-  font-size: 11px;
+  font-size: 13.2px;
 
   font-weight: 700;
 
@@ -3072,7 +3075,7 @@ button {
 
   color: #aaaab5;
 
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .request-card-description {
@@ -3084,7 +3087,7 @@ button {
 
   color: #999aa8;
 
-  font-size: 9px;
+  font-size: 12px;
 
   line-height: 1.5;
 
@@ -3112,7 +3115,7 @@ button {
 
   color: #a2a3ae;
 
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .request-card-side {
@@ -3131,7 +3134,7 @@ button {
 
   border-radius: 20px;
 
-  font-size: 8px;
+  font-size: 12px;
 
   font-weight: 700;
 }
@@ -3244,7 +3247,7 @@ button {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .requests-empty p {
@@ -3254,7 +3257,7 @@ button {
 
   color: #a1a2ae;
 
-  font-size: 9px;
+  font-size: 12px;
 
   line-height: 1.6;
 }
@@ -3270,7 +3273,7 @@ button {
 
   background: #7058e8;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 }
@@ -3352,7 +3355,7 @@ button {
 
   .request-status,
   .request-priority {
-    font-size: 7px;
+    font-size: 12px;
   }
 }
 /* =========================
@@ -3376,7 +3379,7 @@ button {
 
   background: transparent;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -3442,7 +3445,7 @@ button {
 .details-request-id {
   color: #a3a4af;
 
-  font-size: 8px;
+  font-size: 12px;
 
   font-weight: 600;
 }
@@ -3458,7 +3461,7 @@ button {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 21px;
+  font-size: 25.2px;
 
   letter-spacing: -0.5px;
 
@@ -3480,7 +3483,7 @@ button {
 
   border-radius: 20px;
 
-  font-size: 8px;
+  font-size: 12px;
 
   font-weight: 700;
 }
@@ -3529,7 +3532,7 @@ button {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 13px;
+  font-size: 15.6px;
 }
 
 .details-card-header p {
@@ -3537,13 +3540,13 @@ button {
 
   color: #a1a2ae;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .details-description {
   color: #777887;
 
-  font-size: 10px;
+  font-size: 12px;
 
   line-height: 1.9;
 }
@@ -3614,13 +3617,13 @@ button {
 .activity-content strong {
   color: #393a4b;
 
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .activity-content span {
   color: #9293a0;
 
-  font-size: 9px;
+  font-size: 12px;
 
   line-height: 1.5;
 }
@@ -3630,7 +3633,7 @@ button {
 
   color: #b0b0ba;
 
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .info-list {
@@ -3670,13 +3673,13 @@ button {
 
   color: #9697a4;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .info-row strong {
   color: #454657;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -3701,7 +3704,7 @@ button {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .request-not-found p {
@@ -3709,7 +3712,7 @@ button {
 
   color: #999aa8;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .request-not-found button {
@@ -3729,7 +3732,7 @@ button {
 
   background: #7058e8;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 }
@@ -3746,7 +3749,7 @@ button {
   }
 
   .details-title-wrapper h1 {
-    font-size: 18px;
+    font-size: 21.6px;
   }
 
   .details-badges {
@@ -3794,7 +3797,7 @@ button {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 23px;
+  font-size: 27.6px;
 
   letter-spacing: -0.6px;
 }
@@ -3804,7 +3807,7 @@ button {
 
   color: #999aa8;
 
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .create-request-layout {
@@ -3847,7 +3850,7 @@ button {
 .label-row label {
   color: #414253;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 }
@@ -3869,7 +3872,7 @@ button {
 
   font-family: inherit;
 
-  font-size: 9px;
+  font-size: 12px;
 
   transition:
     border-color 0.2s,
@@ -3935,7 +3938,7 @@ button {
 
   background: transparent;
 
-  font-size: 9px;
+  font-size: 12px;
 
   cursor: pointer;
 }
@@ -3943,7 +3946,7 @@ button {
 .field-error {
   color: #d85e6e;
 
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .label-row {
@@ -3957,7 +3960,7 @@ button {
 .label-row > span {
   color: #aaaab4;
 
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .priority-options {
@@ -4001,7 +4004,7 @@ button {
 
   background: #fcfcfe;
 
-  font-size: 8px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -4053,7 +4056,7 @@ button {
 
   background: white;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -4081,7 +4084,7 @@ button {
 
   background: #7058e8;
 
-  font-size: 9px;
+  font-size: 12px;
 
   font-weight: 700;
 
@@ -4144,7 +4147,7 @@ button {
 
   font-family: "Space Grotesk", sans-serif;
 
-  font-size: 12px;
+  font-size: 14.4px;
 }
 
 .request-help-card p {
@@ -4152,7 +4155,7 @@ button {
 
   color: #9293a0;
 
-  font-size: 9px;
+  font-size: 12px;
 
   line-height: 1.7;
 }
@@ -4178,7 +4181,7 @@ button {
 
   color: #777887;
 
-  font-size: 8px;
+  font-size: 12px;
 
   line-height: 1.5;
 }
